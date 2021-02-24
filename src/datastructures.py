@@ -40,20 +40,23 @@ class FamilyStructure:
     
     def _generateId(self):
         return randint(0, 99999999)
-
-    @app.route('/members', methods=['POST'])    
+  
     def add_member(self, member):
-        self._members.append()
-        # fill this method and update the return
-        pass
+        self._members.append(member)
+        return None           
 
     def delete_member(self, id):
         # fill this method and update the return
-        pass
+        for position in range(len(self._members)):
+            if self._members[position]["id"] == id:
+                self._members.pop(position)
+            return None
 
     def get_member(self, id):
         # fill this method and update the return
-        pass
+        for m in self._merbers:
+            if i["id"] == int(id):
+                return i
 
     # this method is done, it returns a list with all the family members
     def get_all_members(self):
